@@ -1,0 +1,130 @@
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modalCard {
+  width: min(520px, 100%);
+  background: var(--card);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+}
+
+.modalTop {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  font-weight: 900;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: #f8fafc;
+}
+
+.modalBody {
+  padding: 16px;
+}
+
+.profileRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.profileAvatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.profileName {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.profileSub {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin: 0 6px 1px 0;
+  background: #cbd5e1;
+}
+
+.dot--on {
+  background: var(--success);
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 14px 0;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 12px;
+  font-size: 14px;
+}
+
+.k {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.v {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.modalBottom {
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.secondaryBtn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.secondaryBtn:hover {
+  background: #f8fafc;
+}

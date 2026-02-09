@@ -1,0 +1,45 @@
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  align-items: flex-end;
+}
+
+.row--user {
+  justify-content: flex-start;
+}
+
+.userAvatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.bubble {
+  max-width: 70%;
+  border-radius: 16px;
+  padding: 12px 12px 10px;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.bubble--user {
+  background: #ffffff;
+  color: var(--text);
+  border-top-left-radius: 8px;
+}
+
+.bubbleText {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.bubbleMeta {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--muted);
+}

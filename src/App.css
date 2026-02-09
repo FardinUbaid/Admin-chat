@@ -1,34 +1,67 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e7eaf2;
+  --primary: #4f46e5;
+  --primary-soft: #eef2ff;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-.app-container {
-  background-color: #f4f4f4; 
-  min-height: 100vh; 
-  font-family: Arial, sans-serif;
+html,
+body {
+  height: auto;
+  overflow-y: auto;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+}
+
+.appRoot {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
 }
 
-.chat-window {
-  background-color: #ffffff;
-  width: 80%;
-  max-width: 1200px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.layout {
+  width: min(1280px, calc(100% - 40px));
+  margin: 18px auto 28px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 18px;
+  align-items: start;
 }
 
-.footer-input {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  padding: 10px;
-  border-top: 1px solid #ddd;
+.leftPane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.rightPane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .rightPane {
+    order: -1;
+  }
 }

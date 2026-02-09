@@ -1,0 +1,54 @@
+.quickWrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+
+.quickTitle {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.quickList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quickChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.quickChip:hover {
+  background: #f8fafc;
+}
+
+.quickIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  display: grid;
+  place-items: center;
+}
+
+.quickText {
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
