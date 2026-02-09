@@ -6,17 +6,15 @@ import ChatWindow from "./components/ChatWindow/ChatWindow.jsx";
 import ChatQueue from "./components/ChatQueue/ChatQueue.jsx";
 import QuickReplies from "./components/QuickReplies/QuickReplies.jsx";
 import FooterInput from "./components/FooterInput/FooterInput.jsx";
-import ProfileModal from "./components/ProfileModal/ProfileModal.jsx";
-
 
 export default function App() {
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [activeChatId, setActiveChatId] = useState("1019");
   const [draft, setDraft] = useState("");
 
   const agent = useMemo(
     () => ({
-      name: "Sarah",
+      name: "Sarah Mitchell",
+      role: "Senior Support Agent",
       shift: "9:00 AM - 5:00 PM",
       status: "online",
       avatarUrl:
@@ -116,18 +114,16 @@ export default function App() {
   const handlePickQuickReply = (text) => setDraft(text);
 
   const handleSend = () => {
-    // static UI: just clears input
     setDraft("");
   };
 
   const handleEndChat = () => {
-    // static UI: just alert
     alert("End Chat clicked (static UI).");
   };
 
   return (
     <div className="appRoot">
-      <Header agent={agent} onOpenProfile={() => setIsProfileOpen(true)} />
+      <Header agent={agent} stats={stats} />
 
       <main className="layout">
         <section className="leftPane">
@@ -146,8 +142,6 @@ export default function App() {
           />
         </aside>
       </main>
-
-      <ProfileModal open={isProfileOpen} agent={agent} onClose={() => setIsProfileOpen(false)} />
     </div>
   );
 }

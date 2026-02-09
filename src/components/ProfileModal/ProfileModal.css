@@ -1,130 +1,195 @@
-.modalBackdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.45);
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  z-index: 50;
-}
-
-.modalCard {
-  width: min(520px, 100%);
+.profilePopover {
+  position: absolute;
+  top: 56px;         /* under header avatar */
+  right: 0;
+  width: 340px;
   background: var(--card);
+  border: 1px solid var(--line);
   border-radius: 18px;
-  border: 1px solid var(--line);
-  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
-  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+  padding: 14px;
+  z-index: 80;
 }
 
-.modalTop {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--line);
+.profileTop {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.modalTitle {
-  font-weight: 900;
-}
-
-.closeBtn {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: #fff;
-  cursor: pointer;
-}
-
-.closeBtn:hover {
-  background: #f8fafc;
-}
-
-.modalBody {
-  padding: 16px;
-}
-
-.profileRow {
+.profileTopLeft {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
+}
+
+.avatarWrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
 }
 
 .profileAvatar {
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
   object-fit: cover;
   border: 2px solid #fff;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-.profileName {
-  font-weight: 900;
-  font-size: 18px;
+.onlineDot {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: var(--success);
 }
 
-.profileSub {
-  margin-top: 4px;
-  font-size: 13px;
+.profileName {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.profileRole {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lock {
+  font-size: 12px;
+}
+
+.profileClose {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+}
+
+.profileClose:hover {
+  background: #f8fafc;
+}
+
+.profileSectionTitle {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 900;
   color: var(--muted);
 }
 
-.dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  margin: 0 6px 1px 0;
-  background: #cbd5e1;
+.statusList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.dot--on {
-  background: var(--success);
+.statusItem {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.statusItem:hover {
+  background: #f8fafc;
+}
+
+.statusItem--active {
+  background: #eef2ff;
+  border-color: rgba(79, 70, 229, 0.28);
+}
+
+.statusIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: #fff;
+}
+
+.statusIcon--blue {
+  color: var(--primary);
+}
+
+.statusIcon--orange {
+  color: #f59e0b;
+}
+
+.statusIcon--muted {
+  color: #475569;
+}
+
+.statusLabel {
+  flex: 1;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.statusCheck {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+}
+
+.statusCheck--empty {
+  background: #e2e8f0;
+  color: transparent;
 }
 
 .divider {
   height: 1px;
   background: var(--line);
-  margin: 14px 0;
+  margin: 12px 0;
 }
 
-.kv {
+.perfGrid {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 10px 12px;
-  font-size: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-.k {
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.v {
-  color: var(--text);
-  font-weight: 700;
-}
-
-.modalBottom {
-  padding: 14px 16px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.secondaryBtn {
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 12px;
+.perfCard {
   border: 1px solid var(--line);
   background: #fff;
-  cursor: pointer;
-  font-weight: 800;
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
 }
 
-.secondaryBtn:hover {
-  background: #f8fafc;
+.perfValue {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.perfLabel {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 800;
 }

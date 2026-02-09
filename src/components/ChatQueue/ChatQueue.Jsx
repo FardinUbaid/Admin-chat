@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./ChatQueue.css";
 
 export default function ChatQueue({ stats, incoming, chats, activeChatId, onSelectChat }) {
+  const [isQueueOpen, setIsQueueOpen] = useState(true);
+
   return (
     <div className="sideWrap">
       <div className="statsRow">
@@ -15,25 +18,34 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
             <span className="sideIcon">👥</span> Chat Queue
           </div>
           <div className="sideCardSub">Incoming Requests</div>
-          <button className="collapseBtn" aria-label="Collapse">▾</button>
+
+          <button
+            className={`collapseBtn ${isQueueOpen ? "collapseBtn--open" : ""}`}
+            aria-label="Toggle queue"
+            onClick={() => setIsQueueOpen((v) => !v)}
+          >
+            ▾
+          </button>
         </div>
 
         <div className="queueMeta">{incoming.length} users waiting</div>
 
-        <div className="queueList">
-          {incoming.map((q) => (
-            <div key={q.id} className="queueItem">
-              <div className="queueItemLeft">
-                <div className={`prioDot prioDot--${q.priority}`} />
-                <div>
-                  <div className="queueTitle">Visitor #{q.id}</div>
-                  <div className="queueSub">{q.title}</div>
+        {isQueueOpen && (
+          <div className="queueList">
+            {incoming.map((q) => (
+              <div key={q.id} className="queueItem">
+                <div className="queueItemLeft">
+                  <div className={`prioDot prioDot--${q.priority}`} />
+                  <div>
+                    <div className="queueTitle">Visitor #{q.id}</div>
+                    <div className="queueSub">{q.title}</div>
+                  </div>
                 </div>
+                <div className="queueTime">{q.waiting}</div>
               </div>
-              <div className="queueTime">{q.waiting}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="sideCard">
