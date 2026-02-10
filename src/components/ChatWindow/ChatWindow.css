@@ -1,7 +1,7 @@
 .chatCard {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -101,6 +101,7 @@
 
 .endBtn:hover {
   background: #fff1f2;
+  border: 1px solid #b91c1c;
 }
 .endBtn:focus {
   outline: none;
