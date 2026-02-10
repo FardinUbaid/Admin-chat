@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  position: relative; /* ✅ anchor for profile popup */
+  position: relative; 
 }
 
 .agentMeta {
@@ -71,6 +71,9 @@
   background: transparent;
   padding: 0;
   cursor: pointer;
+}
+.agentAvatarBtn:focus {
+  outline: none;
 }
 
 .agentAvatar {

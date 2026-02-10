@@ -1,15 +1,16 @@
 import { useMemo, useState } from "react";
 import "./ProfileModal.css";
+import { Headphones, Coffee, Circle, X, Check } from "lucide-react";
 
 export default function ProfileModal({ open, onClose, agent, stats }) {
   const [status, setStatus] = useState("available");
 
   const statusItems = useMemo(
     () => [
-      { key: "available", label: "Available", icon: "○", accent: "blue" },
-      { key: "in_chat", label: "In Chat", icon: "○", accent: "muted" },
-      { key: "away", label: "Away", icon: "◌", accent: "orange" },
-      { key: "break", label: "In Break", icon: "☕", accent: "muted" },
+      { key: "available", label: "Available", icon: <Circle size={12} />, accent: "blue" },
+      { key: "in_chat", label: "In Chat", icon: <Circle size={12} />, accent: "muted" },
+      { key: "away", label: "Away", icon: <Circle size={12} />, accent: "orange" },
+      { key: "break", label: "In Break", icon: <Coffee size={12} />, accent: "muted" },
     ],
     []
   );
@@ -28,13 +29,13 @@ export default function ProfileModal({ open, onClose, agent, stats }) {
           <div>
             <div className="profileName">{agent.name}</div>
             <div className="profileRole">
-              <span className="lock">🔒</span> {agent.role || "Support Agent"}
+              <span className="lock"><Headphones size={12} /></span> {agent.role || "Support Agent"}
             </div>
           </div>
         </div>
 
         <button className="profileClose" onClick={onClose} aria-label="Close">
-          ✕
+          < X size={20} />
         </button>
       </div>
 
@@ -49,7 +50,7 @@ export default function ProfileModal({ open, onClose, agent, stats }) {
           >
             <div className={`statusIcon statusIcon--${s.accent}`}>{s.icon}</div>
             <div className="statusLabel">{s.label}</div>
-            {status === s.key ? <div className="statusCheck">✓</div> : <div className="statusCheck statusCheck--empty" />}
+            {status === s.key ? <div className="statusCheck"><Check size={12} /></div> : <div className="statusCheck statusCheck--empty" />}
           </button>
         ))}
       </div>

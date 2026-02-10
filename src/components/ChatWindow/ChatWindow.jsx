@@ -1,6 +1,7 @@
 import "./ChatWindow.css";
 import AgentMessegeBubble from "../MessegeBubble/AgentMessegeBubble/AgentMessegeBubble";
 import UserMessegeBubble from "../MessegeBubble/UserMessegeBubble/UserMessegeBubble";
+import { Ellipsis, Phone, Video, X } from "lucide-react";
 
 export default function ChatWindow({ conversation, onEndChat }) {
   const { visitor, messages } = conversation;
@@ -20,12 +21,12 @@ export default function ChatWindow({ conversation, onEndChat }) {
         </div>
 
         <div className="chatHeader__right">
-          <button className="iconBtn" aria-label="Call">📞</button>
-          <button className="iconBtn" aria-label="Video">🎥</button>
-          <button className="iconBtn" aria-label="More">⋯</button>
+          <button className="iconBtn" aria-label="Call"><Phone className="iconBtn__icon" size={16} /></button>
+          <button className="iconBtn" aria-label="Video"><Video className="iconBtn__icon" size={16} /></button>
+          <button className="iconBtn" aria-label="More"><Ellipsis className="iconBtn__icon" size={16} /></button>
 
           <button className="endBtn" onClick={onEndChat}>
-            <span className="endBtn__x">✕</span>
+            <span className="endBtn__x"><X className="endBtn__x-icon" size={16} /></span>
             End Chat
           </button>
         </div>

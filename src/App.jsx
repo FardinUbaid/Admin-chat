@@ -35,10 +35,7 @@ export default function App() {
   const incomingQueue = useMemo(
     () => [
       { id: "1020", title: "Payment issue", waiting: "2m", priority: "normal" },
-      { id: "1021", title: "Login problem", waiting: "4m", priority: "high" },
-      { id: "1022", title: "Refund request", waiting: "6m", priority: "normal" },
-      { id: "1023", title: "Invoice missing", waiting: "8m", priority: "low" },
-      { id: "1024", title: "Delivery status", waiting: "10m", priority: "normal" },
+      { id: "1021", title: "Login problem", waiting: "4m", priority: "high" }
     ],
     []
   );

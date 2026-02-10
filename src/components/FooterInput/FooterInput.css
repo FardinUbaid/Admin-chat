@@ -29,23 +29,18 @@
 }
 
 .miniBtn {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: #fff;
   cursor: pointer;
 }
 
 .miniBtn:hover {
   background: #f8fafc;
+  border-color: orange;
+}
+.miniBtn:focus {
+ outline: none;
 }
 
 .sendBtn {
-  width: 44px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid rgba(79, 70, 229, 0.25);
   background: var(--primary-soft);
   color: var(--primary);
   font-weight: 900;
@@ -54,5 +49,5 @@
 
 .sendBtn:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
+  cursor: pointer;
 }

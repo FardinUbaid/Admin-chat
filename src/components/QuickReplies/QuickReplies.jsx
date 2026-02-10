@@ -1,9 +1,10 @@
 import "./QuickReplies.css";
+import { Zap } from "lucide-react";
 
 export default function QuickReplies({ items, onPick }) {
   return (
     <div className="quickWrap">
-      <div className="quickTitle">⚡ Quick Replies</div>
+      <div className="quickTitle"><Zap size={16} color="orange"/> Quick Replies</div>
 
       <div className="quickList">
         {items.map((q) => (

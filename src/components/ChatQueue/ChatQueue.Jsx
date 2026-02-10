@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./ChatQueue.css";
+import { ChevronDown, Users, MessageSquare } from "lucide-react";
 
 export default function ChatQueue({ stats, incoming, chats, activeChatId, onSelectChat }) {
   const [isQueueOpen, setIsQueueOpen] = useState(true);
+  const [showAllChats, setShowAllChats] = useState(false);
 
   return (
     <div className="sideWrap">
@@ -15,7 +17,7 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
       <div className="sideCard">
         <div className="sideCardTop">
           <div className="sideCardTitle">
-            <span className="sideIcon">👥</span> Chat Queue
+            <span className="sideIcon"><Users size={16} /></span> Chat Queue
           </div>
           <div className="sideCardSub">Incoming Requests</div>
 
@@ -24,7 +26,7 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
             aria-label="Toggle queue"
             onClick={() => setIsQueueOpen((v) => !v)}
           >
-            ▾
+            <ChevronDown size={16} />
           </button>
         </div>
 
@@ -51,7 +53,7 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
       <div className="sideCard">
         <div className="sideCardTop">
           <div className="sideCardTitle">
-            <span className="sideIcon">💬</span> My Chats
+            <span className="sideIcon2"><MessageSquare size={16} /></span> My Chats
           </div>
           <div className="sideCardSub">1 active</div>
         </div>
@@ -70,10 +72,19 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
 
         <div className="sectionLabel">RECENT</div>
         <div className="chatList">
-          {chats.recent.map((c) => (
+          {chats.recent.slice(0, showAllChats ? chats.recent.length : 3).map((c) => (
             <ChatItem key={c.id} chat={c} active={false} onClick={() => onSelectChat(c.id)} />
           ))}
         </div>
+
+        {!showAllChats && chats.recent.length > 3 && (
+          <button 
+            className="seeMoreBtn"
+            onClick={() => setShowAllChats(true)}
+          >
+            Show {chats.recent.length-3} More
+          </button>
+        )}
       </div>
     </div>
   );

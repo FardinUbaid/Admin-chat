@@ -1,16 +1,23 @@
+
 .row {
   display: flex;
   gap: 10px;
   margin-bottom: 14px;
-  align-items: flex-end;
+  align-items: flex-start; 
 }
 
 .row--agent {
   justify-content: flex-end;
 }
 
-.bubble {
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   max-width: 70%;
+}
+
+.bubble {
   border-radius: 16px;
   padding: 12px 12px 10px;
   border: 1px solid var(--line);
@@ -20,7 +27,7 @@
 
 .bubble--agent {
   background: var(--primary);
-  color: #fff;
+  color: #ffffff;
   border-color: rgba(255, 255, 255, 0.14);
   border-top-right-radius: 8px;
 }
@@ -31,9 +38,8 @@
 }
 
 .bubbleMeta {
-  margin-top: 6px;
   font-size: 11px;
-  opacity: 0.85;
+  opacity: 0.8;
   text-align: right;
 }
 
@@ -42,55 +48,8 @@
   height: 34px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: #ffffff;
   display: grid;
   place-items: center;
-}
-.row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 14px;
-  align-items: flex-end;
-}
-
-.row--agent {
-  justify-content: flex-end;
-}
-
-.bubble {
-  max-width: 70%;
-  border-radius: 16px;
-  padding: 12px 12px 10px;
-  border: 1px solid var(--line);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
-  white-space: pre-line;
-}
-
-.bubble--agent {
-  background: var(--primary);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.14);
-  border-top-right-radius: 8px;
-}
-
-.bubbleText {
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-.bubbleMeta {
-  margin-top: 6px;
-  font-size: 11px;
-  opacity: 0.85;
-  text-align: right;
-}
-
-.bubbleAction {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: #fff;
-  display: grid;
-  place-items: center;
+  color: var(--primary);
 }

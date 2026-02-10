@@ -39,7 +39,7 @@
 }
 
 .visitorTitle {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .visitorSub {
@@ -70,27 +70,29 @@
 }
 
 .iconBtn {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: #fff;
+  background-color: var(--card);
+  margin: -6px;
+  color: #82929f;
+  border: none;
   cursor: pointer;
 }
 
 .iconBtn:hover {
-  background: #f8fafc;
+  color: #2a2929;
+}
+.iconBtn:focus {
+  outline: none;
 }
 
 .endBtn {
-  margin-left: 6px;
+  margin-left: 2px;
   height: 36px;
   padding: 0 12px;
-  border-radius: 12px;
+  border-radius: 6px;
   border: 1px solid #fecaca;
   background: #fff;
   color: #b91c1c;
-  font-weight: 700;
+  font-weight: 400;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -100,6 +102,9 @@
 .endBtn:hover {
   background: #fff1f2;
 }
+.endBtn:focus {
+  outline: none;
+}
 
 .endBtn__x {
   width: 18px;
@@ -107,12 +112,12 @@
   border-radius: 6px;
   display: grid;
   place-items: center;
-  background: #fee2e2;
   color: #b91c1c;
   font-weight: 900;
 }
 
 .chatBody {
+  padding: 12px;
   max-height: calc(100vh - 280px);
   overflow: auto;
 }
