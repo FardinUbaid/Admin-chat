@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ChatQueue.css";
-import { ChevronDown, Users, MessageSquare, Clock4 } from "lucide-react";
+import { ChevronDown, Users, MessageSquare, Clock4, MoveRight } from "lucide-react";
 
 export default function ChatQueue({ stats, incoming, chats, activeChatId, onSelectChat }) {
   const [isQueueOpen, setIsQueueOpen] = useState(true);
@@ -43,6 +43,7 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
                     <div className="queueSub"> <Clock4 size={12} /> Waiting {q.waiting}</div>
                   </div>
                 </div>
+                <button className="acceptBtn">Accept <MoveRight className="arrow" size={16} /></button>
               </div>
             ))}
           </div>
