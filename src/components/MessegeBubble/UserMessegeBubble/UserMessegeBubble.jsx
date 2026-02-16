@@ -12,7 +12,7 @@ export default function UserMessegeBubble({ text, time }) {
         <div className="bubble bubble--user">
           <div className="bubbleText">{text}</div>
         </div>
-        <div className="bubbleMeta">{time}</div>
+        <div className="bubbleMeta"> {time}</div>
       </div>
     </div>
   );

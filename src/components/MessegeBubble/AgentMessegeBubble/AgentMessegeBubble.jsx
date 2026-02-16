@@ -1,4 +1,4 @@
-import { Bot } from "lucide-react";
+import { Bot, CheckCheck } from "lucide-react";
 import "./AgentMessegeBubble.css";
 
 export default function AgentMessegeBubble({ text, time }) {
@@ -8,7 +8,7 @@ export default function AgentMessegeBubble({ text, time }) {
         <div className="bubble bubble--agent">
           <div className="bubbleText">{text}</div>
         </div>
-        <div className="bubbleMeta">{time}</div>
+        <div className="bubbleMeta"> <CheckCheck size={12} /> {time}</div>
       </div>
 
       <div className="bubbleAction" title="Tools">
