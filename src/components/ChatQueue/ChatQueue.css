@@ -75,7 +75,7 @@
   height: 28px;
   color: var(--success);
   border-radius: 10px;
-  background: #c0eec6;
+  background: var(--active);
   display: grid;
   place-items: center;
 }
@@ -126,6 +126,11 @@
   padding: 10px;
   background: #fff;
 }
+.queueItem:hover {
+  border: 1px solid orange;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
 
 .queueItemLeft {
   display: flex;
@@ -134,20 +139,10 @@
 }
 
 .prioDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #cbd5e1;
-}
-
-.prioDot--high {
-  background: #ef4444;
-}
-.prioDot--normal {
-  background: #f59e0b;
-}
-.prioDot--low {
-  background: #22c55e;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--cq);
 }
 
 .queueTitle {
@@ -157,7 +152,7 @@
 
 .queueSub {
   font-size: 12px;
-  color: var(--muted);
+  color: orange;
   margin-top: 1px;
 }
 
@@ -186,7 +181,7 @@
   text-align: left;
   width: 100%;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card);
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
@@ -212,7 +207,7 @@
   width: 38px;
   height: 38px;
   border-radius: 14px;
-  background: #f1f5f9;
+  background: var(--active);
   display: grid;
   place-items: center;
   font-weight: 900;
@@ -280,12 +275,12 @@
 
 .pill2--on {
   border-color: #bbf7d0;
-  background: #ecfdf5;
+  background: var(--active);
   color: #166534;
 }
 .pill2--on:hover {
   border-color: #bbf7d0;
-  background: #d1fae5;
+  background: #96e6bc;
   color: #166534;
 }
 

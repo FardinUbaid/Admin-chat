@@ -37,13 +37,12 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
             {incoming.map((q) => (
               <div key={q.id} className="queueItem">
                 <div className="queueItemLeft">
-                  <div className={`prioDot prioDot--${q.priority}`} />
+                  <div className= "prioDot" />
                   <div>
                     <div className="queueTitle">Visitor #{q.id}</div>
-                    <div className="queueSub">{q.title}</div>
+                    <div className="queueSub"> <Clock4 size={12} /> Waiting {q.waiting}</div>
                   </div>
                 </div>
-                <div className="queueTime">{q.waiting}</div>
               </div>
             ))}
           </div>

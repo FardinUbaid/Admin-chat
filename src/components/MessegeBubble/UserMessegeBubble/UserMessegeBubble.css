@@ -36,7 +36,7 @@
 }
 
 .bubble--user {
-  background: #ffffff;
+  background: var(--card);
   color: var(--text);
   border-top-left-radius: 8px;
 }

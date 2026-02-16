@@ -34,7 +34,7 @@
   background: linear-gradient(135deg, #7c3aed, #4f46e5);
   display: grid;
   place-items: center;
-  color: #fff;
+  color: var(--card);
   font-weight: 800;
 }
 
@@ -87,7 +87,7 @@
   height: 40px;
   border-radius: 14px;
   object-fit: cover;
-  border: 2px solid #fff;
+  border: 2px solid var(--card);
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
@@ -98,7 +98,7 @@
   width: 11px;
   height: 11px;
   border-radius: 999px;
-  border: 2px solid #fff;
+  border: 2px solid var(--card);
   background: #cbd5e1;
 }
 

@@ -27,7 +27,7 @@
 
 .bubble--agent {
   background: var(--primary);
-  color: #ffffff;
+  color: var(--card);
   border-color: rgba(255, 255, 255, 0.14);
   border-top-right-radius: 8px;
 }
@@ -48,7 +48,7 @@
   height: 34px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: #ffffff;
+  background: var(--card);
   display: grid;
   place-items: center;
   color: var(--primary);

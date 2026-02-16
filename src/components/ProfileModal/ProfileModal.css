@@ -36,7 +36,7 @@
   height: 48px;
   border-radius: 16px;
   object-fit: cover;
-  border: 2px solid #fff;
+  border: 2px solid var(--card);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
@@ -47,7 +47,7 @@
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  border: 2px solid #fff;
+  border: 2px solid var(--card);
   background: var(--success);
 }
 
@@ -70,7 +70,7 @@
 }
 
 .profileClose {
-  background: #fff;
+  background: var(--card);
   border: none;
   cursor: pointer;
 }
@@ -97,7 +97,7 @@
 .statusItem {
   width: 100%;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card);
   border-radius: 14px;
   padding: 12px;
   display: flex;
@@ -126,7 +126,7 @@
   display: grid;
   place-items: center;
   font-weight: 900;
-  background: #fff;
+  background: var(--card);
 }
 
 .statusIcon--blue {
@@ -154,7 +154,7 @@
   display: grid;
   place-items: center;
   background: var(--primary);
-  color: #fff;
+  color: var(--card);
   font-weight: 900;
 }
 
@@ -177,7 +177,7 @@
 
 .perfCard {
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card);
   border-radius: 12px;
   padding: 12px;
   text-align: center;
