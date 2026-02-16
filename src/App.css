@@ -19,6 +19,7 @@ html,
 body {
   height: auto;
   overflow-y: auto;
+  padding-top: 28px;
 }
 
 body {
@@ -35,8 +36,9 @@ body {
 }
 
 .layout {
-  width: min(1280px, calc(100% - 40px));
-  margin: 18px auto 28px;
+  width: 100%;
+  margin: 10px auto 28px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 18px;

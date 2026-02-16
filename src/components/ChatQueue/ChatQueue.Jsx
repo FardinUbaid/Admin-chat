@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ChatQueue.css";
-import { ChevronDown, Users, MessageSquare } from "lucide-react";
+import { ChevronDown, Users, MessageSquare, Clock4 } from "lucide-react";
 
 export default function ChatQueue({ stats, incoming, chats, activeChatId, onSelectChat }) {
   const [isQueueOpen, setIsQueueOpen] = useState(true);
@@ -111,7 +111,7 @@ function ChatItem({ chat, active, onClick }) {
         <div className="chatSub">{chat.subtitle}</div>
         <div className="chatMeta">
           <span className={`pill2 ${chat.status === "Active" ? "pill2--on" : ""}`}>{chat.status}</span>
-          <span className="metaDot">•</span>
+          <span className="metaDot"><Clock4 size={12} /></span>
           <span className="muted">{chat.duration}</span>
         </div>
       </div>
