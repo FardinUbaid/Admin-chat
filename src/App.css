@@ -30,7 +30,10 @@ body {
   background: var(--bg);
 }
 
-.appRoot {
+.appContent {
+  flex: 1;
+  margin-left: 64px;
+  transition: margin-left 0.25s ease;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,6 +42,7 @@ body {
 
 .layout {
   width: 100%;
+  min-height: 100vh;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr minmax(0, 360px); 
@@ -63,6 +67,31 @@ body {
 }
 .layout, .rightPane {
   box-sizing: border-box;
+}
+
+.appContainer {
+  display: flex;
+}
+
+.appContent {
+  flex: 1;
+  margin-left: 64px;
+  transition: margin-left 0.25s ease;
+}
+
+.left-drawer:hover ~ .appContent {
+  margin-left: 200px;
+}
+
+.appContent .topbar {
+  left: 64px;
+  width: calc(100% - 64px);
+  transition: left 0.25s ease, width 0.25s ease;
+}
+
+.left-drawer:hover ~ .appContent .topbar {
+  left: 200px;
+  width: calc(100% - 200px);
 }
 
 

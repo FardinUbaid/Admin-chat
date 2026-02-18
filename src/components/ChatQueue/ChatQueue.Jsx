@@ -8,11 +8,6 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
 
   return (
     <div className="sideWrap">
-      <div className="statsRow">
-        <StatCard value={stats.today} label="Today" />
-        <StatCard value={stats.avgTime} label="Avg. Time" />
-        <StatCard value={stats.csat} label="CSAT" />
-      </div>
 
       <div className="sideCard">
         <div className="sideCardTop">
@@ -71,30 +66,30 @@ export default function ChatQueue({ stats, incoming, chats, activeChatId, onSele
         </div>
 
         <div className="sectionLabel">RECENT</div>
-        <div className="chatList">
-          {chats.recent.slice(0, showAllChats ? chats.recent.length : 3).map((c) => (
-            <ChatItem key={c.id} chat={c} active={false} onClick={() => onSelectChat(c.id)} />
-          ))}
-        </div>
 
-        {!showAllChats && chats.recent.length > 3 && (
-          <button 
+        {showAllChats && (
+          <div className="chatList">
+            {chats.recent.map((c) => (
+              <ChatItem
+                key={c.id}
+                chat={c}
+                active={false}
+                onClick={() => onSelectChat(c.id)}
+              />
+            ))}
+          </div>
+        )}
+
+        {chats.recent.length > 0 && (
+          <button
             className="seeMoreBtn"
-            onClick={() => setShowAllChats(true)}
+            onClick={() => setShowAllChats((prev) => !prev)}
           >
-            Show {chats.recent.length-3} More
+            {showAllChats ? "Hide Recent" : `Show ${chats.recent.length} Recent`}
           </button>
         )}
-      </div>
-    </div>
-  );
-}
 
-function StatCard({ value, label }) {
-  return (
-    <div className="statCard">
-      <div className="statValue">{value}</div>
-      <div className="statLabel">{label}</div>
+      </div>
     </div>
   );
 }

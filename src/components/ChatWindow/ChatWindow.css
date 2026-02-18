@@ -71,7 +71,7 @@
 .chatHeader__right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .iconBtn {
@@ -84,6 +84,7 @@
 
 .iconBtn:hover {
   color: #2a2929;
+  background: var(--bg);
 }
 .iconBtn:focus {
   outline: none;

@@ -4,8 +4,10 @@ import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import ChatWindow from "./components/ChatWindow/ChatWindow.jsx";
 import ChatQueue from "./components/ChatQueue/ChatQueue.jsx";
-import QuickReplies from "./components/QuickReplies/QuickReplies.jsx";
+import QuickReplies from "./components/ChatQueue/QuickReplies/QuickReplies.jsx";
 import FooterInput from "./components/FooterInput/FooterInput.jsx";
+import Stats from "./components/ChatQueue/Stats/Stats.jsx";
+import LeftDrawer from "./components/LeftDrawer/LeftDrawer.jsx";
 
 export default function App() {
   const [activeChatId, setActiveChatId] = useState("1019");
@@ -96,17 +98,22 @@ export default function App() {
     }),
     []
   );
-
-  const quickReplies = useMemo(
-    () => [
-      { id: "q1", icon: "👋", label: "Hello! How can I help you today?" },
-      { id: "q2", icon: "📝", label: "Can you please share more details?" },
-      { id: "q3", icon: "🔎", label: "Our team is checking this for you..." },
-      { id: "q4", icon: "🙏", label: "Thank you for your patience!" },
-      { id: "q5", icon: "✨", label: "Is there anything else I can help with?" },
-    ],
-    []
-  );
+const quickReplies = useMemo(
+  () => [
+    { id: "q1", label: "Hello! How can I help you today?", category: "Favorite", option: "Greetings" },
+    { id: "q2", label: "I'm here to assist you with any questions.", category: "Favorite", option: "Common" },
+    { id: "q3", label: "I need to escalate this issue.", category: "Admin", option: "Escalation" },
+    { id: "q4", label: "Please review our policies.", category: "Admin", option: "Policies" },
+    { id: "q5", label: "I have a custom response for this case.", category: "Mine", option: "Custom Responses" },
+    { id: "q6", label: "Thank you for your patience. Let me close this chat.", category: "Mine", option: "Closing" },
+    { id: "q7", label: "Hello", category: "Favorite", option: "Greetings" },
+    { id: "q8", label: "Meh!", category: "Favorite", option: "Common" },
+    { id: "q9", label: "Escalate", category: "Admin", option: "Escalation" },
+    { id: "q10", label: "Policy", category: "Admin", option: "Policies" },
+    { id: "q11", label: "Custom", category: "Mine", option: "Custom Responses" },
+  ],
+  []
+);
 
   const handlePickQuickReply = (text) => setDraft(text);
 
@@ -119,17 +126,21 @@ export default function App() {
   };
 
   return (
-    <div className="appRoot">
+  <div className="appContainer">
+    <LeftDrawer />
+
+    <div className="appContent">
       <Header agent={agent} stats={stats} />
 
       <main className="layout">
         <section className="leftPane">
           <ChatWindow conversation={conversation} onEndChat={handleEndChat} />
-          <QuickReplies items={quickReplies} onPick={handlePickQuickReply} />
           <FooterInput value={draft} onChange={setDraft} onSend={handleSend} />
         </section>
 
         <aside className="rightPane">
+          <Stats stats={stats} />
+          <QuickReplies items={quickReplies} onPick={handlePickQuickReply} />
           <ChatQueue
             stats={stats}
             incoming={incomingQueue}
@@ -137,8 +148,10 @@ export default function App() {
             activeChatId={activeChatId}
             onSelectChat={setActiveChatId}
           />
+          
         </aside>
       </main>
     </div>
-  );
+  </div>
+);
 }

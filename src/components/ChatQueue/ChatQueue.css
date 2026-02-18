@@ -4,38 +4,6 @@
   gap: 12px;
 }
 
-.statsRow {
-  background-color: var(--card);
-  padding: 15px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 5px;
-}
-
-.statCard {
-  background: rgba(100, 116, 139, 0.05);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 12px;
-  text-align: center;
-}
-
-.statValue {
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.statLabel {
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
 .sideCard {
   background: var(--card);
   border: 1px solid var(--line);
@@ -303,10 +271,15 @@
   margin-top: 8px;
   width: 100%;
   text-align: center;
+  outline: none;
 }
 
 .seeMoreBtn:hover {
-  background-color: #eef2ff;;
+  background-color: #eef2ff;
+  outline: none;
+}
+.seeMoreBtn:focus {
+  outline: none;
 }
 
 .acceptBtn {
