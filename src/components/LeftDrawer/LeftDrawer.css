@@ -7,7 +7,6 @@
 
   width: 64px;
   background: var(--card);
-  border-right: 1px solid var(--line);
 
   display: flex;
   flex-direction: column;
@@ -17,7 +16,7 @@
   z-index: 1000;
 }
 
-.left-drawer:hover {
+.left-drawer.open {
   width: 200px;
 }
 
@@ -26,7 +25,7 @@
   align-items: center;
   gap: 12px;
   padding: 18px 16px;
-  border-bottom: 1px solid var(--line);
+  position: relative;
 }
 
 .logo {
@@ -41,12 +40,43 @@
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
-  display: none;
 }
 
-.left-drawer:hover .app-name {
-  display: inline;
+.toggle-btn {
+  margin-left: 8px;
+  left: 8px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  outline: none;
+  position: relative; 
+  transition: transform 0.6s ease, left 0.6s ease;
 }
+
+.toggle-btn:hover {
+  background: var(--success);
+}
+
+/* .toggle-btn:active {
+  background: var(--success);
+} */
+
+.toggle-btn:focus {
+  outline: none;
+}
+
+.toggle-btn.active {
+  left: 150px; 
+  transform: rotate(90deg); 
+}
+
+
 
 .drawer-section {
   padding: 12px 8px;
@@ -54,6 +84,7 @@
   flex-direction: column;
   gap: 4px;
 }
+
 
 .drawer-btn {
   display: flex;
@@ -71,18 +102,18 @@
   color: var(--text);
 
   transition: background 0.2s ease, color 0.2s ease;
+
+  outline: none;
 }
 
 .drawer-btn:hover {
   background: var(--primary-soft);
-  outline: none;
 }
 
 .drawer-btn.active {
   background: var(--success);
   color: var(--card);
   font-weight: 500;
-  outline: none;
 }
 
 .drawer-option {
@@ -101,6 +132,8 @@
   color: var(--muted);
 
   transition: background 0.2s ease, color 0.2s ease;
+
+  outline: none;
 }
 
 .drawer-option:hover {
@@ -108,22 +141,24 @@
   color: var(--card);
 }
 
-.label {
-  white-space: nowrap;
-}
-
-.left-drawer:not(:hover) .label {
-  display: none;
-}
-
-.left-drawer:not(:hover) .drawer-btn,
-.left-drawer:not(:hover) .drawer-option {
+/* COLLAPSED MODE CENTER ICONS */
+.left-drawer:not(.open) .drawer-btn,
+.left-drawer:not(.open) .drawer-option {
   justify-content: center;
   gap: 0;
   padding-left: 0;
   padding-right: 0;
 }
 
-.left-drawer:not(:hover) .options-section {
+.left-drawer:not(.open) .options-section {
   display: none;
+}
+
+button:focus,
+button:active,
+.drawer-btn:focus,
+.drawer-btn:active,
+.drawer-option:focus,
+.drawer-option:active {
+  outline: none;
 }

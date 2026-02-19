@@ -32,7 +32,7 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  background: linear-gradient(135deg, var(--success), var(--primary));
   display: grid;
   place-items: center;
   color: var(--card);
@@ -40,7 +40,7 @@
 }
 
 .brand__title {
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.2px;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .agentMeta__welcome {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
 }
 

@@ -7,7 +7,6 @@
 .statsRow {
   background-color: var(--card);
   padding: 15px;
-  border: 1px solid var(--line);
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

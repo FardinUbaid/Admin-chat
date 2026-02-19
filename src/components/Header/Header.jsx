@@ -31,7 +31,7 @@ export default function Header({ agent, stats }) {
     <header className="topbar">
       <div className="topbar__inner">
         <div className="brand">
-          <div className="brand__logo">C</div>
+          {/* <div className="brand__logo">C</div> */}
           <div className="brand__text">
             <div className="brand__title">ChatDesk</div>
             <div className="brand__sub">Agent Console</div>

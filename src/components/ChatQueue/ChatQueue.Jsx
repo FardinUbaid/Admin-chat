@@ -3,7 +3,7 @@ import "./ChatQueue.css";
 import { ChevronDown, Users, MessageSquare, Clock4, MoveRight , Sparkles, CheckCheck } from "lucide-react";
 
 export default function ChatQueue({ stats, incoming, chats, activeChatId, onSelectChat }) {
-  const [isQueueOpen, setIsQueueOpen] = useState(true);
+  const [isQueueOpen, setIsQueueOpen] = useState(false);
   const [showAllChats, setShowAllChats] = useState(false);
 
   return (

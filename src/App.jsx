@@ -93,7 +93,9 @@ export default function App() {
           from: "agent",
           text: "Thank you, John. I can see your account and I'm checking the billing history now. Please give me just a moment.",
           time: "2:38 PM",
-        },
+        },{id: "m8", from: "user", text: "You should see the refund reflected in your account within 3-5 business days. Is there anything else I can assist you with today?", time: "2:40 PM" },
+        { id: "m7", from: "agent", text: "I see the issue. It looks like there was a system error that caused the double charge. I will process a refund for the duplicate charge immediately.", time: "2:39 PM" },
+              
       ],
     }),
     []

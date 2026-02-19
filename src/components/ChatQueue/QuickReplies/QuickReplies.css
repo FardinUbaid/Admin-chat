@@ -5,16 +5,28 @@
 }
 
 .quickTitle {
-  font-weight: 700;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
   color: var(--text);
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .quickIcon {
   margin-right: 8px;
+}
+.icon{
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  color: var(--primary);
+  border-radius: 10px;
+  background: #f1f5f9;
+  display: grid;
+  place-items: center;
 }
 
 .categoryNavigation {
@@ -28,12 +40,15 @@
   background: var(--bg);
   border-radius: 12px;
   font-size: 14px;
+  line-height: 1;
   cursor: pointer;
   outline: none;
   border: 1px solid transparent;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-weight: 400;
+  color: var(--muted);
 }
 
 .categoryButton.active {
@@ -63,7 +78,8 @@
 }
 
 .optionTitle {
-  background: #f8fafc;
+  background: var(--bg);
+  color: var(--text);
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -71,6 +87,7 @@
   width: 100%;
   text-align: left;
   outline: none;
+  font-weight: 400;
 }
 
 .optionTitle:hover {
@@ -91,8 +108,8 @@
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  border-radius: 16px;
-  background: #f0f4f8;
+  border-radius: 12px;
+  background: var(--bg);
   cursor: pointer;
   max-width: 100%;
   margin-bottom: 8px;
@@ -112,6 +129,7 @@
 .quickText {
   font-size: 13px;
   color: var(--text);
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

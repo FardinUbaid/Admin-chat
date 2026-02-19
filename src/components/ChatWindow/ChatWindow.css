@@ -1,6 +1,5 @@
 .chatCard {
   background: var(--card);
-  border: 1px solid var(--line);
   border-radius: 10px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -39,7 +38,7 @@
 }
 
 .visitorTitle {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .visitorSub {

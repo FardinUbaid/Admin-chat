@@ -52,7 +52,7 @@
 }
 
 .profileName {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
 }
 
@@ -84,7 +84,7 @@
   margin-top: 10px;
   margin-bottom: 8px;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--muted);
 }
 
@@ -125,7 +125,7 @@
   border: 1px solid var(--line);
   display: grid;
   place-items: center;
-  font-weight: 900;
+  font-weight: 500;
   background: var(--card);
 }
 
@@ -143,7 +143,7 @@
 
 .statusLabel {
   flex: 1;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
 }
 
@@ -155,7 +155,7 @@
   place-items: center;
   background: var(--primary);
   color: var(--card);
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .statusCheck--empty {
@@ -185,12 +185,12 @@
 
 .perfValue {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .perfLabel {
   margin-top: 4px;
   font-size: 11px;
   color: var(--muted);
-  font-weight: 800;
+  font-weight: 500;
 }

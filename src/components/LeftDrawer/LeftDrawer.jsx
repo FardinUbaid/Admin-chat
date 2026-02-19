@@ -12,11 +12,14 @@ import {
   User,
   Sliders,
   HelpCircle,
-  Webhook
+  Webhook,
+  Menu,
+  X
 } from "lucide-react";
 
 export default function LeftDrawer() {
   const [activeCategory, setActiveCategory] = useState("CharDesk");
+  const [isOpen, setIsOpen] = useState(false);
 
   const categories = [
     { id: "CharDesk", label: "CharDesk", icon: <MessageSquare size={18} /> },
@@ -43,14 +46,26 @@ export default function LeftDrawer() {
   };
 
   return (
-    <aside className="left-drawer">
+    <aside className={`left-drawer ${isOpen ? "open" : ""}`}>
+
       {/* HEADER */}
       <div className="drawer-header">
-        <div className="logo"><Webhook /></div>
-        <span className="app-name">App Name</span>
+        <div className="logo">
+          <Webhook />
+        </div>
+
+        {isOpen && <span className="app-name">App Name</span>}
+
       </div>
 
       {/* CATEGORIES */}
+        <button
+          className={`toggle-btn ${isOpen ? 'active' : ''}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {isOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
+
       <div className="drawer-section">
         {categories.map((category) => (
           <button
@@ -61,20 +76,22 @@ export default function LeftDrawer() {
             onClick={() => setActiveCategory(category.id)}
           >
             {category.icon}
-            <span className="label">{category.label}</span>
+            {isOpen && <span className="label">{category.label}</span>}
           </button>
         ))}
       </div>
 
       {/* OPTIONS */}
-      <div className="drawer-section options-section">
-        {options[activeCategory].map((option, index) => (
-          <button key={index} className="drawer-option">
-            {option.icon}
-            <span className="label">{option.label}</span>
-          </button>
-        ))}
-      </div>
+      {isOpen && (
+        <div className="drawer-section options-section">
+          {options[activeCategory].map((option, index) => (
+            <button key={index} className="drawer-option">
+              {option.icon}
+              <span className="label">{option.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </aside>
   );
 }

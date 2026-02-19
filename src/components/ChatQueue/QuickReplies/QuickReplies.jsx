@@ -38,7 +38,7 @@ export default function QuickReplies({ items, onPick }) {
   return (
     <div className="quickWrap">
       <div className="quickTitle">
-        <Zap size={16} color="orange" /> Quick Replies
+        <Zap size={12} className="icon" color="orange" /> Quick Replies
       </div>
 
       <div className="categoryNavigation">
